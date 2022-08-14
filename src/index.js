@@ -1,17 +1,88 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+//var declared to the var keyword are scoped to the function
+//var declared to the let keyword are scoped to the block in which they are defined
+// const var is block scoped, this var cannot be reassigned. It will always be constant
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+function hello_var() {
+  for (var i = 1; i < 5; i++) {
+    console.log("Variable " + String(i));
+  }
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+  console.log(i);
+}
+
+function hello_let() {
+  var i = 0;
+  for (let i = 1; i < 5; i++) {
+    console.log("Let " + String(i));
+  }
+
+  console.log(i);
+}
+
+const dob = 1994;
+console.log(dob);
+
+hello_var();
+hello_let();
+
+// Objects
+const person = {
+  name: "Ronith",
+  walk() {
+    console.log(this);
+  },
+  talk() {},
+};
+
+console.log(person);
+
+person.talk();
+//If target memeber of an object is unclear we use bracket notation, if not we use person.name = '';
+const targetMember = "name";
+person[targetMember] = "Ron";
+
+//This keyword and bind function
+
+person.walk();
+//when a method is called outsid an object this keyword will refer to the windows object;
+//Every function in js is an object which can be called
+let walk_c = person.walk;
+walk_c();
+
+//This can be avoided by using the bind, which binds the method to that objects
+walk_c = person.walk.bind(person);
+walk_c();
+
+//arrow functions
+function square_old(number) {
+  return number * number;
+}
+console.log(square_old(5));
+
+const square_new = (number) => number * number;
+console.log(square_new(4));
+
+const jobs = [
+  { id: 1, is_active: true },
+  { id: 2, is_active: true },
+  { id: 3, is_active: false },
+];
+
+const active_jobs = jobs.filter((job) => job.is_active);
+console.log(active_jobs);
+
+//Array.map Method
+const colors = ["red", "green", "blue"];
+const items = colors.map((color) => "<li>${color}</li>");
+console.log(items);
+
+// Object destructuring
+const { name: n } = person;
+console.log(n);
+
+// Spread operator
+
+const f_a = [1, 2, 3];
+const s_a = [4, 5, 6];
+const combines = [...f_a, "a", ...s_a];
+console.log(combines);
