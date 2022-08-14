@@ -1,3 +1,9 @@
+import React from "react";
+import ReactDOM from "react-dom";
+import Counter from "./components/counter";
+
+ReactDOM.render(<Counter />, document.getElementById("root"));
+
 //var declared to the var keyword are scoped to the function
 //var declared to the let keyword are scoped to the block in which they are defined
 // const var is block scoped, this var cannot be reassigned. It will always be constant
