@@ -5,6 +5,7 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Header from "./components/header";
 import SideBar from "./components/sidebar";
+import BTable from "./components/table";
 
 import "./App.css";
 
@@ -21,7 +22,9 @@ class App extends Component {
           sx={{ flexGrow: 1, bgcolor: "background.default", p: 3 }}
         >
           <Toolbar />
-          <Typography paragraph>Main Body</Typography>
+          <Typography paragraph>
+            <BTable />
+          </Typography>
         </Box>
       </Box>
     );
