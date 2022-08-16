@@ -8,8 +8,6 @@ import SideBar from "./components/sidebar";
 
 import "./App.css";
 
-const drawerWidth = 240;
-
 class App extends Component {
   state = {};
   render() {
