@@ -4,7 +4,7 @@ import App from "./App";
 
 ReactDOM.render(<App />, document.getElementById("root"));
 
-//var declared to the var keyword are scoped to the function
+//var declared to the var keyword are scoped to the functions
 //var declared to the let keyword are scoped to the block in which they are defined
 // const var is block scoped, this var cannot be reassigned. It will always be constant
 
