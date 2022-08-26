@@ -93,6 +93,34 @@ ReactDOM.render(<App />, document.getElementById("root"));
 // const combines = [...f_a, "a", ...s_a];
 // console.log(combines);
 
+//classes
+
+class Person {
+  constructor(name) {
+    this.name = name;
+  }
+
+  walk() {
+    console.log("walk");
+  }
+}
+
+const person = new Person("Ronith");
+
+// Inheritance
+class Teacher extends Person {
+  constructor(name, degree) {
+    super(name);
+    this.degree = degree;
+  }
+  teach() {
+    console.log("Teach");
+  }
+}
+
+const teacher = new Teacher("Temp", "MSC");
+console.log(teacher.degree);
+
 // //Named and Default Export
 // //Default -> import ... from './'
 // //Named -> import {...} from './'
